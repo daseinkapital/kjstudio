@@ -1,0 +1,21 @@
+{
+  "name": "kjstudio",
+  "version": "0.1.0",
+  "description": "A standalone karaoke application that makes you the Karaoke Jockey",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {},
+  "keywords": [
+    "karaoke",
+    "jocket",
+    "kjstudio"
+  ],
+  "author": "daseinkapital",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daseinkapital/kjstudio/issues"
+  },
+  "homepage": "https://github.com/daseinkapital/kjstudio#readme"
+}
