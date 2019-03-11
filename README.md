@@ -6,4 +6,4 @@ A standalone karaoke application
  - Create editable template for lyrics rendering
  - Integration with lyrics sites?
  - Return microphone audio through speaker
- - Integrate previous [karaoke] (https://github.com/JMPerez/karaoke) apps
+ - Integrate previous [karaoke](https://github.com/JMPerez/karaoke) apps
