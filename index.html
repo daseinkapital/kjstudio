@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>KJ Studio!</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body style="margin: 0px;">
+    <h1>Welcome to KJ Studio!</h1>
+    <p>Thanks for downloading KJ Studio, where you are the Karaoke Jockey. Make a karaoke version of your favorite songs, sing songs, and share with friends.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Album</th>
+            </tr>
+        </thead>
+        <tbody id="songsTable">
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const electron = require('electron')
+        const { ipcRenderer } = electron
+        const tbody = document.querySelector('#songsTable')
+
+        ipcRenderer.on('song:add', (e, item) => {
+            const tr = document.createElement('tr')
+            for(const[key,value] of Object.entries(item)) {
+                if(key != 'file') {
+                    text = document.createTextNode(item[key])
+                    td = document.createElement('td')
+                    td.appendChild(text)
+                    tr.appendChild(td)
+                }
+            }
+            tbody.appendChild(tr)
+        })
+    </script>
+  </body>
+</html>

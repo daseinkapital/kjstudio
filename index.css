@@ -1,0 +1,20 @@
+.left-title {
+    text-align: center;
+    position: relative;
+    left: 1%;
+    display: inline-block;
+}
+
+.middle-title {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    color: white;
+}
+
+.right-title {
+    text-align: center;
+    position: relative;
+    right: 1%;
+    display: inline-block;
+}

@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+        <title>Add Song to Karaoke</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label>
+                    Select Song
+                </label>
+                <input type="file" id="addedSong" autofocus>
+                <label>
+                    Song Name
+                </label>
+                <input type="text" id="songName">
+                <label>
+                    Artist
+                </label>
+                <input type="text" id="songArtist">
+                <label>
+                    Album
+                </label>
+                <input type="text" id="songAlbum">
+            </div>
+            <button type="submit">Add Song</button>
+        </form>
+        <script>
+        const electron = require('electron')
+        const {ipcRenderer} = electron
+
+        const form = document.querySelector('form')
+        form.addEventListener('submit', submitAddSong)
+
+        function submitAddSong(e) {
+            e.preventDefault()
+            const file = document.querySelector('#addedSong').value
+            const name = document.querySelector('#songName').value
+            const artist = document.querySelector('#songArtist').value
+            const album = document.querySelector('#songAlbum').value
+
+            let form = {}
+            form.file = file
+            form.name = name
+            form.artist = artist
+            form.album = album
+            ipcRenderer.send('song:add', form)
+        }
+        </script>
+    </body>
+</html>
